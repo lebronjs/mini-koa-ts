@@ -1,0 +1,17 @@
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+        /* 基本选项 */
+        "outDir": "./dist",
+        "lib": ["ES5", "ES6"],
+        "target": "es6",
+        "module": "commonjs",
+        "allowSyntheticDefaultImports": true,
+        /*模块解析选项*/
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true
+    },
+    /* 指定编译文件或排除指定编译文件 */
+    "include": ["./src/**/*"]
+}

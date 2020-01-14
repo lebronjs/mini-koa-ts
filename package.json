@@ -1,0 +1,33 @@
+{
+	"name": "mini-koa-ts",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"dev": "cross-env NODE_ENV=development nodemon -e ts,js --watch src --exec 'rm -rf dist && npm run tsc && npm run start -debug'",
+		"build": "npm run tsc",
+		"tsc": "tsc",
+		"start": "node --harmony index.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"koa": "^2.11.0",
+		"koa-bodyparser": "^4.2.1",
+		"koa-json": "^2.0.2",
+		"koa-logger": "^3.2.1",
+		"koa-router": "^7.4.0"
+	},
+	"devDependencies": {
+		"@types/koa": "^2.11.0",
+		"@types/koa-bodyparser": "^4.3.0",
+		"@types/koa-json": "^2.0.18",
+		"@types/koa-logger": "^3.1.1",
+		"@types/koa-router": "^7.4.0",
+		"@types/node": "^13.1.6",
+		"cross-env": "^6.0.3",
+		"tslint": "^5.20.1"
+	}
+}
