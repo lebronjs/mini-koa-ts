@@ -1,21 +1,21 @@
 import * as Koa from 'koa'
 import * as logger from 'koa-logger'
 import * as json from 'koa-json'
-import bodyParser = require('koa-bodyparser')
+import * as bodyParser from 'koa-bodyparser'
 
 import controller from './controller'
 
-// declare class MyKoa extends Koa {
-// 	context: {
-//         createYear: number,
-//         config: any
-//     }
-// }
+declare module 'koa' {
+	interface Context {
+		createYear: number
+		config: any
+	}
+}
 
 // tslint:disable-next-line: max-classes-per-file
 class App {
 	config: any
-	app: any
+	app: Koa
 	constructor(config) {
 		this.config = config
 		this.koa.context.createYear = 2020

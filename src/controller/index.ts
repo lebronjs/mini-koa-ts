@@ -1,16 +1,20 @@
 import * as Router from 'koa-router'
 import app from './app'
 
-const router = new Router()
-
-router.use('/app', app.routes())
+import { DefaultState, Context } from 'koa'
+const router = new Router<DefaultState, Context>()
 
 interface HelloRequest {
 	userName: number
 }
+
+router.use('/app', app.routes())
+
 router.get('/', async (ctx, next) => {
 	ctx.body = {
-		msg: 'Hello world'
+		msg: 'Hello world',
+		year: ctx.createYear,
+		config: ctx.config
 	}
 	await next()
 })
